@@ -1,0 +1,30 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "frame": {
+    "version": "1",
+    "name": "ApexPredict",
+    "subtitle": "Built with Zara",
+    "description": "ApexPredict is a Base Mini App built with Zara.",
+    "iconUrl": "https://0co.to/images/zara-2.png",
+    "homeUrl": "https://a3ef6a8f38b14e76a10870e559b3ad40-rl36.vercel.app",
+    "splashImageUrl": "https://a3ef6a8f38b14e76a10870e559b3ad40-rl36.vercel.app/splash.png",
+    "splashBackgroundColor": "#000000",
+    "heroImageUrl": "https://a3ef6a8f38b14e76a10870e559b3ad40-rl36.vercel.app/image.png",
+    "tagline": "ApexPredict",
+    "screenshotUrls": [
+      "https://a3ef6a8f38b14e76a10870e559b3ad40-rl36.vercel.app/screenshot.png",
+      "https://a3ef6a8f38b14e76a10870e559b3ad40-rl36.vercel.app/screenshot.png"
+    ],
+    "primaryCategory": "social",
+    "tags": [
+      "base",
+      "miniapp",
+      "onchainkit"
+    ],
+    "webhookUrl": "https://a3ef6a8f38b14e76a10870e559b3ad40-rl36.vercel.app/api/webhook"
+  }
+}
