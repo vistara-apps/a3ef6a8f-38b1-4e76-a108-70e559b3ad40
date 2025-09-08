@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -10,10 +11,17 @@ module.exports = {
       colors: {
         primary: 'hsl(210, 70%, 50%)',
         accent: 'hsl(130, 70%, 50%)',
+        // Dark mode colors
         bg: 'hsl(220, 15%, 10%)',
         surface: 'hsl(220, 15%, 15%)',
         'text-primary': 'hsl(220, 10%, 95%)',
         'text-secondary': 'hsl(220, 10%, 70%)',
+        // Light mode colors
+        'bg-light': 'hsl(220, 20%, 98%)',
+        'surface-light': 'hsl(220, 20%, 95%)',
+        'text-primary-light': 'hsl(220, 15%, 15%)',
+        'text-secondary-light': 'hsl(220, 10%, 40%)',
+        // F1 brand colors (consistent across themes)
         'f1-red': '#e10600',
         'f1-blue': '#0090ff',
       },

@@ -4,22 +4,25 @@
 
 @layer base {
   * {
-    @apply border-gray-700;
+    @apply border-gray-700 dark:border-gray-700 border-gray-300;
   }
   
   body {
-    @apply bg-bg text-text-primary;
+    @apply bg-bg text-text-primary dark:bg-bg dark:text-text-primary bg-bg-light text-text-primary-light;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-surface/80 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-card;
+    @apply bg-surface/80 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-card
+           dark:bg-surface/80 dark:border-gray-700/50
+           bg-surface-light/80 border-gray-300/50;
   }
   
   .metric-card {
-    @apply glass-card p-4 hover:bg-surface/90 transition-all duration-200;
+    @apply glass-card p-4 hover:bg-surface/90 transition-all duration-200
+           dark:hover:bg-surface/90 hover:bg-surface-light/90;
   }
   
   .btn-primary {
@@ -27,7 +30,9 @@
   }
   
   .btn-secondary {
-    @apply bg-surface border border-gray-600 text-text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-700 transition-all duration-200;
+    @apply bg-surface border border-gray-600 text-text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-700 transition-all duration-200
+           dark:bg-surface dark:border-gray-600 dark:text-text-primary dark:hover:bg-gray-700
+           bg-surface-light border-gray-400 text-text-primary-light hover:bg-gray-200;
   }
   
   .confidence-bar {
