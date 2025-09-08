@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-700;
+  }
+  
+  body {
+    @apply bg-bg text-text-primary;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface/80 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-card;
+  }
+  
+  .metric-card {
+    @apply glass-card p-4 hover:bg-surface/90 transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-f1-blue text-white px-6 py-3 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface border border-gray-600 text-text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-700 transition-all duration-200;
+  }
+  
+  .confidence-bar {
+    @apply h-2 rounded-full bg-gradient-to-r transition-all duration-300;
+  }
+  
+  .telemetry-grid {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4;
+  }
+  
+  .f1-gradient {
+    @apply bg-gradient-to-br from-f1-red via-primary to-f1-blue;
+  }
+  
+  .glow-effect {
+    @apply animate-glow;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .border-gradient {
+    background: linear-gradient(hsl(220, 15%, 15%), hsl(220, 15%, 15%)) padding-box,
+                linear-gradient(45deg, hsl(210, 70%, 50%), hsl(130, 70%, 50%)) border-box;
+    border: 2px solid transparent;
+  }
+}
