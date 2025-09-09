@@ -17,6 +17,7 @@ import {
   mockPsychologySignals 
 } from '@/lib/mockData';
 import { Zap, TrendingUp, Brain, Settings2 } from 'lucide-react';
+import { DarkModeToggle } from '@/components/DarkModeToggle';
 
 export default function HomePage() {
   const { setFrameReady } = useMiniKit();
@@ -49,11 +50,14 @@ export default function HomePage() {
               </div>
             </div>
             
-            <Wallet>
-              <ConnectWallet>
-                <Name />
-              </ConnectWallet>
-            </Wallet>
+            <div className="flex items-center space-x-4">
+              <DarkModeToggle variant="compact" />
+              <Wallet>
+                <ConnectWallet>
+                  <Name />
+                </ConnectWallet>
+              </Wallet>
+            </div>
           </div>
         </div>
       </div>
