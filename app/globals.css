@@ -3,31 +3,235 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Light Theme - Retro Futuristic */
+    --background: 248 250 252; /* slate-50 */
+    --foreground: 15 23 42; /* slate-900 */
+    
+    /* Core colors */
+    --primary: 59 130 246; /* blue-500 */
+    --primary-50: 239 246 255;
+    --primary-100: 219 234 254;
+    --primary-200: 191 219 254;
+    --primary-300: 147 197 253;
+    --primary-400: 96 165 250;
+    --primary-500: 59 130 246;
+    --primary-600: 37 99 235;
+    --primary-700: 29 78 216;
+    --primary-800: 30 64 175;
+    --primary-900: 30 58 138;
+    --primary-950: 23 37 84;
+    
+    --secondary: 168 85 247; /* purple-500 */
+    --secondary-50: 250 245 255;
+    --secondary-100: 243 232 255;
+    --secondary-200: 233 213 255;
+    --secondary-300: 196 181 253;
+    --secondary-400: 168 85 247;
+    --secondary-500: 147 51 234;
+    --secondary-600: 126 34 206;
+    --secondary-700: 107 33 168;
+    --secondary-800: 88 28 135;
+    --secondary-900: 74 29 109;
+    --secondary-950: 59 7 100;
+    
+    --accent: 6 182 212; /* cyan-500 */
+    --accent-50: 236 254 255;
+    --accent-100: 207 250 254;
+    --accent-200: 165 243 252;
+    --accent-300: 103 232 249;
+    --accent-400: 34 211 238;
+    --accent-500: 6 182 212;
+    --accent-600: 8 145 178;
+    --accent-700: 14 116 144;
+    --accent-800: 21 94 117;
+    --accent-900: 22 78 99;
+    --accent-950: 8 51 68;
+    
+    /* Surface colors */
+    --surface: 255 255 255; /* white */
+    --surface-elevated: 248 250 252; /* slate-50 */
+    --surface-hover: 241 245 249; /* slate-100 */
+    
+    /* Text colors */
+    --text-primary: 15 23 42; /* slate-900 */
+    --text-secondary: 71 85 105; /* slate-600 */
+    --text-muted: 148 163 184; /* slate-400 */
+    
+    /* Border colors */
+    --border: 226 232 240; /* slate-200 */
+    --border-subtle: 241 245 249; /* slate-100 */
+    --input: 226 232 240; /* slate-200 */
+    --ring: 59 130 246; /* blue-500 */
+    
+    /* Status colors */
+    --success: 34 197 94; /* green-500 */
+    --warning: 245 158 11; /* amber-500 */
+    --error: 239 68 68; /* red-500 */
+    --info: 59 130 246; /* blue-500 */
+    
+    /* F1 Brand colors - Light theme variants */
+    --f1-red: 225 6 0; /* #e10600 */
+    --f1-blue: 0 144 255; /* #0090ff */
+    
+    /* Neon colors - Light theme (more subtle) */
+    --neon-pink: 236 72 153; /* pink-500 */
+    --neon-cyan: 6 182 212; /* cyan-500 */
+    --neon-purple: 168 85 247; /* purple-500 */
+    --neon-green: 34 197 94; /* green-500 */
+    --neon-yellow: 245 158 11; /* amber-500 */
+    
+    /* Chart colors */
+    --chart-1: 59 130 246; /* blue-500 */
+    --chart-2: 168 85 247; /* purple-500 */
+    --chart-3: 6 182 212; /* cyan-500 */
+    --chart-4: 34 197 94; /* green-500 */
+    --chart-5: 245 158 11; /* amber-500 */
+    
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-card-hover: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-neon: 0 0 10px rgb(6 182 212 / 0.3);
+    --shadow-neon-strong: 0 0 20px rgb(6 182 212 / 0.5), 0 0 40px rgb(6 182 212 / 0.3);
+  }
+
+  .dark {
+    /* Dark Theme - Retro Futuristic */
+    --background: 7 11 20; /* Very dark blue-gray */
+    --foreground: 248 250 252; /* slate-50 */
+    
+    /* Core colors - Enhanced for dark theme */
+    --primary: 59 130 246; /* blue-500 */
+    --primary-50: 23 37 84;
+    --primary-100: 30 58 138;
+    --primary-200: 30 64 175;
+    --primary-300: 29 78 216;
+    --primary-400: 37 99 235;
+    --primary-500: 59 130 246;
+    --primary-600: 96 165 250;
+    --primary-700: 147 197 253;
+    --primary-800: 191 219 254;
+    --primary-900: 219 234 254;
+    --primary-950: 239 246 255;
+    
+    --secondary: 196 181 253; /* purple-300 */
+    --secondary-50: 59 7 100;
+    --secondary-100: 74 29 109;
+    --secondary-200: 88 28 135;
+    --secondary-300: 107 33 168;
+    --secondary-400: 126 34 206;
+    --secondary-500: 147 51 234;
+    --secondary-600: 168 85 247;
+    --secondary-700: 196 181 253;
+    --secondary-800: 233 213 255;
+    --secondary-900: 243 232 255;
+    --secondary-950: 250 245 255;
+    
+    --accent: 103 232 249; /* cyan-300 */
+    --accent-50: 8 51 68;
+    --accent-100: 22 78 99;
+    --accent-200: 21 94 117;
+    --accent-300: 14 116 144;
+    --accent-400: 8 145 178;
+    --accent-500: 6 182 212;
+    --accent-600: 34 211 238;
+    --accent-700: 103 232 249;
+    --accent-800: 165 243 252;
+    --accent-900: 207 250 254;
+    --accent-950: 236 254 255;
+    
+    /* Surface colors */
+    --surface: 15 23 42; /* slate-900 */
+    --surface-elevated: 30 41 59; /* slate-800 */
+    --surface-hover: 51 65 85; /* slate-700 */
+    
+    /* Text colors */
+    --text-primary: 248 250 252; /* slate-50 */
+    --text-secondary: 203 213 225; /* slate-300 */
+    --text-muted: 148 163 184; /* slate-400 */
+    
+    /* Border colors */
+    --border: 71 85 105; /* slate-600 */
+    --border-subtle: 51 65 85; /* slate-700 */
+    --input: 71 85 105; /* slate-600 */
+    --ring: 103 232 249; /* cyan-300 */
+    
+    /* Status colors - Enhanced for dark theme */
+    --success: 74 222 128; /* green-400 */
+    --warning: 251 191 36; /* amber-400 */
+    --error: 248 113 113; /* red-400 */
+    --info: 96 165 250; /* blue-400 */
+    
+    /* F1 Brand colors - Dark theme variants */
+    --f1-red: 239 68 68; /* Enhanced red for dark theme */
+    --f1-blue: 96 165 250; /* Enhanced blue for dark theme */
+    
+    /* Neon colors - Dark theme (more vibrant) */
+    --neon-pink: 244 114 182; /* pink-400 */
+    --neon-cyan: 103 232 249; /* cyan-300 */
+    --neon-purple: 196 181 253; /* purple-300 */
+    --neon-green: 74 222 128; /* green-400 */
+    --neon-yellow: 251 191 36; /* amber-400 */
+    
+    /* Chart colors - Dark theme */
+    --chart-1: 96 165 250; /* blue-400 */
+    --chart-2: 196 181 253; /* purple-300 */
+    --chart-3: 103 232 249; /* cyan-300 */
+    --chart-4: 74 222 128; /* green-400 */
+    --chart-5: 251 191 36; /* amber-400 */
+    
+    /* Shadows - Enhanced for dark theme */
+    --shadow-card: 0 4px 12px rgb(0 0 0 / 0.4);
+    --shadow-card-hover: 0 10px 25px rgb(0 0 0 / 0.5);
+    --shadow-neon: 0 0 15px rgb(103 232 249 / 0.4);
+    --shadow-neon-strong: 0 0 30px rgb(103 232 249 / 0.6), 0 0 60px rgb(103 232 249 / 0.4);
+  }
+
   * {
-    @apply border-gray-700;
+    @apply border-border;
   }
   
   body {
-    @apply bg-bg text-text-primary;
+    @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Smooth theme transitions */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-surface/80 backdrop-blur-sm border border-gray-700/50 rounded-lg shadow-card;
+    @apply bg-surface/80 backdrop-blur-md border border-border/50 rounded-lg shadow-card;
+    @apply hover:bg-surface-hover/80 hover:shadow-card-hover transition-all duration-300;
+  }
+  
+  .glass-card-neon {
+    @apply glass-card border-accent/30 shadow-neon;
+    @apply hover:border-accent/50 hover:shadow-neon-strong;
   }
   
   .metric-card {
-    @apply glass-card p-4 hover:bg-surface/90 transition-all duration-200;
+    @apply glass-card p-4 hover:bg-surface-elevated/90 transition-all duration-200;
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-primary to-f1-blue text-white px-6 py-3 rounded-lg font-medium hover:from-blue-600 hover:to-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl;
+    @apply bg-gradient-to-r from-primary to-f1-blue text-white px-6 py-3 rounded-lg font-medium;
+    @apply hover:from-primary/80 hover:to-f1-blue/80 transition-all duration-200;
+    @apply shadow-lg hover:shadow-xl hover:shadow-primary/25;
   }
   
   .btn-secondary {
-    @apply bg-surface border border-gray-600 text-text-primary px-4 py-2 rounded-lg font-medium hover:bg-gray-700 transition-all duration-200;
+    @apply bg-surface border border-border text-text-primary px-4 py-2 rounded-lg font-medium;
+    @apply hover:bg-surface-hover transition-all duration-200;
+  }
+  
+  .btn-neon {
+    @apply bg-gradient-to-r from-neon-cyan to-neon-purple text-white px-6 py-3 rounded-lg font-medium;
+    @apply hover:from-neon-cyan/80 hover:to-neon-purple/80 transition-all duration-200;
+    @apply shadow-neon hover:shadow-neon-strong animate-pulse-neon;
   }
   
   .confidence-bar {
@@ -42,8 +246,34 @@
     @apply bg-gradient-to-br from-f1-red via-primary to-f1-blue;
   }
   
+  .retro-gradient {
+    @apply bg-gradient-to-br from-neon-purple via-neon-cyan to-neon-pink;
+  }
+  
   .glow-effect {
     @apply animate-glow;
+  }
+  
+  .neon-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-neon-cyan to-neon-purple;
+    text-shadow: 0 0 10px rgb(103 232 249 / 0.5);
+  }
+  
+  .scan-lines {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scan-lines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgb(103 232 249 / 0.8), transparent);
+    animation: scan-line 3s linear infinite;
+    z-index: 1;
   }
 }
 
@@ -52,9 +282,32 @@
     @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
   
+  .text-neon-gradient {
+    @apply bg-gradient-to-r from-neon-cyan to-neon-purple bg-clip-text text-transparent;
+  }
+  
   .border-gradient {
-    background: linear-gradient(hsl(220, 15%, 15%), hsl(220, 15%, 15%)) padding-box,
-                linear-gradient(45deg, hsl(210, 70%, 50%), hsl(130, 70%, 50%)) border-box;
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(45deg, rgb(var(--primary)), rgb(var(--accent))) border-box;
     border: 2px solid transparent;
+  }
+  
+  .border-neon-gradient {
+    background: linear-gradient(var(--surface), var(--surface)) padding-box,
+                linear-gradient(45deg, rgb(var(--neon-cyan)), rgb(var(--neon-purple))) border-box;
+    border: 2px solid transparent;
+  }
+  
+  /* Theme transition utilities */
+  .theme-transition {
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  /* Retro grid background */
+  .retro-grid {
+    background-image: 
+      linear-gradient(rgba(var(--neon-cyan), 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(var(--neon-cyan), 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
   }
 }

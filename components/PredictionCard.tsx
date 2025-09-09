@@ -46,7 +46,7 @@ export function PredictionCard({
       </div>
 
       {/* Predicted Winner */}
-      <div className="bg-surface/50 rounded-lg p-4 border border-gray-700/50">
+      <div className="bg-surface/50 rounded-lg p-4 border border-border/50">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 bg-gradient-to-br from-primary to-f1-blue rounded-full flex items-center justify-center text-white font-bold text-lg">
@@ -108,7 +108,7 @@ export function PredictionCard({
 
       {/* Expanded Content */}
       {isExpanded && (
-        <div className="space-y-4 pt-4 border-t border-gray-700/50">
+        <div className="space-y-4 pt-4 border-t border-border/50">
           {/* Driver Psychology */}
           <div className="space-y-2">
             <h5 className="font-semibold text-text-primary flex items-center space-x-2">
@@ -117,16 +117,16 @@ export function PredictionCard({
             </h5>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {prediction.driverPsychologySignals.slice(0, 2).map((signal, index) => (
-                <div key={index} className="bg-surface/30 rounded-lg p-3">
+                <div key={index} className="bg-surface-elevated/30 rounded-lg p-3">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-medium text-text-primary">
                       {prediction.predictedWinner.name}
                     </span>
                     <span className={`text-xs px-2 py-1 rounded-full bg-surface ${
-                      signal.mentalState === 'confident' ? 'text-green-400' :
-                      signal.mentalState === 'pressured' ? 'text-red-400' :
-                      signal.mentalState === 'aggressive' ? 'text-orange-400' :
-                      'text-blue-400'
+                      signal.mentalState === 'confident' ? 'text-success' :
+                      signal.mentalState === 'pressured' ? 'text-error' :
+                      signal.mentalState === 'aggressive' ? 'text-warning' :
+                      'text-info'
                     }`}>
                       {signal.mentalState}
                     </span>
@@ -152,7 +152,7 @@ export function PredictionCard({
               <div className="w-2 h-2 bg-f1-blue rounded-full"></div>
               <span>Weather & Track Impact</span>
             </h5>
-            <div className="bg-surface/30 rounded-lg p-3">
+            <div className="bg-surface-elevated/30 rounded-lg p-3">
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <span className="text-text-secondary">Conditions:</span>
@@ -169,9 +169,9 @@ export function PredictionCard({
                 <div>
                   <span className="text-text-secondary">Impact:</span>
                   <span className={`ml-2 capitalize ${
-                    prediction.weatherImpact.impactOnRace === 'minimal' ? 'text-green-400' :
-                    prediction.weatherImpact.impactOnRace === 'moderate' ? 'text-yellow-400' :
-                    'text-red-400'
+                    prediction.weatherImpact.impactOnRace === 'minimal' ? 'text-success' :
+                    prediction.weatherImpact.impactOnRace === 'moderate' ? 'text-warning' :
+                    'text-error'
                   }`}>
                     {prediction.weatherImpact.impactOnRace}
                   </span>
@@ -186,7 +186,7 @@ export function PredictionCard({
               <div className="w-2 h-2 bg-f1-red rounded-full"></div>
               <span>Optimal Pit Strategy</span>
             </h5>
-            <div className="bg-surface/30 rounded-lg p-3">
+            <div className="bg-surface-elevated/30 rounded-lg p-3">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm text-text-secondary">Strategy:</span>
                 <span className="text-sm font-medium text-text-primary">
