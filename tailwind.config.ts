@@ -54,6 +54,13 @@ const config: Config = {
           900: "var(--accent-900)",
           950: "var(--accent-950)",
         },
+        // ApexPredict specific colors
+        bg: "var(--bg)",
+        surface: "var(--surface)",
+        "text-primary": "var(--text-primary)",
+        "text-secondary": "var(--text-secondary)",
+        "f1-red": "var(--f1-red)",
+        "f1-blue": "var(--f1-blue)",
         muted: {
           DEFAULT: "var(--muted)",
           foreground: "var(--muted-foreground)",
@@ -78,6 +85,16 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      spacing: {
+        xs: "4px",
+        sm: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "24px",
+      },
+      boxShadow: {
+        card: "0 4px 12px hsla(0, 0%, 0%, 0.2)",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -87,10 +104,31 @@ const config: Config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        glow: {
+          "0%, 100%": { 
+            boxShadow: "0 0 5px var(--primary), 0 0 10px var(--primary), 0 0 15px var(--primary)" 
+          },
+          "50%": { 
+            boxShadow: "0 0 10px var(--primary), 0 0 20px var(--primary), 0 0 30px var(--primary)" 
+          },
+        },
+        pulse: {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        glow: "glow 2s ease-in-out infinite alternate",
+        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+      },
+      transitionDuration: {
+        fast: "150ms",
+        base: "250ms",
+      },
+      transitionTimingFunction: {
+        "ease-custom": "cubic-bezier(0.22,1,0.36,1)",
       },
     },
   },
