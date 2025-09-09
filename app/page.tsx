@@ -10,6 +10,8 @@ import { RaceHeader } from '@/components/RaceHeader';
 import { Leaderboard } from '@/components/Leaderboard';
 import { DriverInsight } from '@/components/DriverInsight';
 import { PitStrategyDisplay } from '@/components/PitStrategyDisplay';
+import { ThemeToggle } from '@/components/ThemeToggle';
+import { RetroEffects } from '@/components/RetroEffects';
 import { 
   mockPrediction, 
   mockCurrentSession, 
@@ -34,9 +36,10 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-bg via-surface to-bg">
+    <div className="min-h-screen bg-gradient-to-br from-background via-surface to-background relative">
+      <RetroEffects variant="subtle" />
       {/* Header */}
-      <div className="sticky top-0 z-50 bg-bg/80 backdrop-blur-sm border-b border-gray-700/50">
+      <div className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -49,16 +52,19 @@ export default function HomePage() {
               </div>
             </div>
             
-            <Wallet>
-              <ConnectWallet>
-                <Name />
-              </ConnectWallet>
-            </Wallet>
+            <div className="flex items-center space-x-4">
+              <ThemeToggle />
+              <Wallet>
+                <ConnectWallet>
+                  <Name />
+                </ConnectWallet>
+              </Wallet>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 py-6 space-y-6">
+      <div className="max-w-7xl mx-auto px-4 py-6 space-y-6 relative z-10">
         {/* Race Session Header */}
         <RaceHeader session={mockCurrentSession} />
 
@@ -155,16 +161,16 @@ export default function HomePage() {
                       <p className="text-xs text-text-secondary">Rain Chance</p>
                     </div>
                     <div className="text-center">
-                      <div className="text-2xl font-bold text-yellow-400">
+                      <div className="text-2xl font-bold text-warning">
                         {mockPrediction.weatherImpact.windSpeed}
                       </div>
                       <p className="text-xs text-text-secondary">Wind (km/h)</p>
                     </div>
                     <div className="text-center">
                       <div className={`text-2xl font-bold capitalize ${
-                        mockPrediction.weatherImpact.impactOnRace === 'minimal' ? 'text-green-400' :
-                        mockPrediction.weatherImpact.impactOnRace === 'moderate' ? 'text-yellow-400' :
-                        'text-red-400'
+                        mockPrediction.weatherImpact.impactOnRace === 'minimal' ? 'text-success' :
+                        mockPrediction.weatherImpact.impactOnRace === 'moderate' ? 'text-warning' :
+                        'text-error'
                       }`}>
                         {mockPrediction.weatherImpact.impactOnRace}
                       </div>
@@ -206,7 +212,7 @@ export default function HomePage() {
                 <p className="text-sm text-text-secondary mb-4">
                   Current prediction accuracy
                 </p>
-                <div className="w-full bg-gray-700 rounded-full h-3">
+                <div className="w-full bg-surface-elevated rounded-full h-3">
                   <div
                     className="h-3 rounded-full bg-gradient-to-r from-accent to-primary transition-all duration-300"
                     style={{ width: `${mockPrediction.confidenceScore * 100}%` }}

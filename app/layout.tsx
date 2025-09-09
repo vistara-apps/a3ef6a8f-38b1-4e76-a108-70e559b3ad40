@@ -15,6 +15,9 @@ export const metadata: Metadata = {
     description: 'Outsmart the Podium: Real-time F1 Race Winner Predictions',
     type: 'website',
   },
+  other: {
+    'theme-color': '#070b14',
+  },
 };
 
 export default function RootLayout({
