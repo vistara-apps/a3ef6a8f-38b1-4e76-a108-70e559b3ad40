@@ -107,9 +107,11 @@ export function ThemeProvider({ children, defaultTheme = DEFAULT_THEME }: ThemeP
   // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-background text-foreground">
-        {children}
-      </div>
+      <ThemeContext.Provider value={value}>
+        <div className="min-h-screen bg-background text-foreground">
+          {children}
+        </div>
+      </ThemeContext.Provider>
     );
   }
 
