@@ -36,8 +36,16 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (!mounted) return;
     
     const root = document.documentElement;
+    const body = document.body;
+    
+    // Update html element for Tailwind dark mode
     root.classList.remove('light', 'dark');
     root.classList.add(theme);
+    
+    // Update body element for custom CSS classes
+    body.classList.remove('light', 'dark');
+    body.classList.add(theme);
+    
     localStorage.setItem('theme', theme);
   }, [theme, mounted]);
 
@@ -49,14 +57,9 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme(newTheme);
   };
 
-  // Prevent hydration mismatch
-  if (!mounted) {
-    return <div className="opacity-0">{children}</div>;
-  }
-
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme, setTheme: handleSetTheme }}>
-      {children}
+      {!mounted ? <div className="opacity-0">{children}</div> : children}
     </ThemeContext.Provider>
   );
 }
